@@ -23,6 +23,7 @@ public class HelloController {
 
     @GetMapping("/register")
     public String showForm(Model model) {
+        
         model.addAttribute("user", new UserDTO()); // 빈 객체 넘겨줌
         return "register"; // register.html 열기
     }
