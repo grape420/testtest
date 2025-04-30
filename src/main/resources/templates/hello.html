@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Page</title>
+</head>
+<body>
+
+<h1 th:text="'Hello, ' + ${name} + '!'">Hello, Guest!</h1>
+
+<p>아래는 과일 목록입니다:</p>
+<ul>
+    <li th:each="item : ${items}" th:text="${item}"></li>
+</ul>
+
+<p th:if="${isLoggedIn}">
+    로그인 상태입니다. 환영합니다!
+</p>
+<p th:unless="${isLoggedIn}">
+    로그인 해주세요.
+</p>
+
+<a th:href="@{/home}">홈으로 가기</a>
+
+</body>
+</html>
